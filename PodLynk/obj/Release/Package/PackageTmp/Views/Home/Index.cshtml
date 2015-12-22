@@ -1,0 +1,94 @@
+﻿@model PodLynk.Models.LoginModel
+@{
+    ViewBag.Title = "Home Page";
+    
+}
+@*<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>AICT</title>*@
+<link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+
+   
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+
+    <script type="text/javascript">
+        $(function() {
+        
+            $("#card").flip({ axis: 'y', trigger: 'manual' });
+           
+        });
+        function btnClicked() {
+            //$("#card").flip({ axis: 'y',trigger: 'manual' });
+            $("#card").flip('toggle');
+        }
+</script>
+@*</head>*@
+<div class="wrapper1">
+
+   <div id="card"> 
+   <div class="wrapper">
+  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel iaculis felis. Nullam vitae dui in enim feugiat congue vitae sit amet orci. Morbi ultrices dolor non ipsum gravida, ac aliquet ipsum venenatis. In blandit consequat ligula sit amet elementum. Quisque finibus, lacus at eleifend suscipit, enim nunc commodo massa, sed pulvinar velit elit a nunc</p>
+  <a href="#" class="login" onclick="btnClicked()"><img class="quickFlipCta" src="~/Content/images/login.png"/></a>
+  <a href="#" class="get-started"><img src="~/Content/images/get-started.png"/></a>
+  <div class="clear"></div>
+  <ul class="menu">
+    <li><a href="#">Media</a></li>
+    <li><a href="#">Trade</a></li>
+    <li><a href="#">Project</a></li>
+  </ul>
+  
+</div>
+    <div class="Loginwrapper">
+           @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+           {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+   
+      <div>
+                    @Html.LabelFor(m => m.UserName, new { @class = "loginLabel" }) 
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "required1" })          
+                    @Html.TextBoxFor(m => m.UserName, new { @autofocus = "autofocus", @class = "form-control", @placeholder = "E-mail Address" })
+                              
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.Password, new { @class = "loginLabel" }) 
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "required1" })       
+                    @Html.PasswordFor(m => m.Password, new { @placeholder = "Password", @class = "form-control" })  
+                               
+                </div>
+                <div class="loginLabel">
+                    <input id="RememberMe" name="RememberMe" type="checkbox"><label for="RememberMe">Save e-mail address on this computer</label>
+                </div>
+             
+                        <input type="submit" class="button pull-right" value="Login" >
+                   
+                   
+                
+   
+    <p>
+        @Html.ActionLink("Register", "Register","Account", null, new { @class="anchors"}) if you don't have an account.
+    </p>
+           }
+        </div>
+        </div>
+ 
+    <style>
+        #card .front {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;width:150px !important;height:150px !important;background:red;
+}
+         #card .back {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;width:150px !important;height:150px !important;background:green;
+}
+      
+    </style>
+    <a class="feedback" href="#"><img src="~/Content/images/feedback.png"/></a>
+</div>
+@*</html>*@

@@ -1,0 +1,217 @@
+@font-face { font-family:'Helvetica-Light'; src:url('font/Helvetica-Light.ttf'); }
+@font-face { font-family:'Helvetica-Bold'; src:url('font/Helvetica-Bold.ttf'); }
+
+html{
+  height:100%
+}
+body {
+	background: url('images/bg-img.png');
+        background-repeat: no-repeat;
+	font-family:'Helvetica-Light', sans-serif;
+	font-size:12px;
+        min-height:100%;
+        margin:0px;
+        background-size: cover;
+        background-position:center;
+}
+
+a { color:#010101; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrapper2 {
+    width:100% !important;
+    height:100% !important;
+}
+.wrapper1 {
+    width:628px;
+        min-height:270px;
+         margin-top: 0px;
+        margin-left: -354px;
+        top: 22%;
+        left: 50%;
+        padding:185px 40px 20px 40px;
+        position:relative;
+}
+/*#wrapper {*/
+/*.wrapper{
+	width:628px;
+        height:270px;
+        background: url('images/content.png');
+        background-repeat: no-repeat;
+        position:absolute;
+        margin-top: -238px;
+        margin-left: -354px;
+        top: 50%;
+        left: 50%;
+        padding:185px 40px 20px 40px;
+}*/
+.wrapper{
+	width:628px;
+        height:270px !important;
+        background: url('images/content.png');
+        background-repeat: no-repeat;
+        position:absolute !important;
+       /* margin-top: -310px;*/
+       margin-top:-166px;
+        margin-left: -354px;
+        top: 50%;
+        left: 50%;
+        padding:185px 40px 20px 40px;
+}
+
+.Loginwrapper{
+	width:628px;
+        height:270px !important;
+        /*background: url('images/white-bg.png');*/
+        background: white;
+        border-radius: 10px;
+        opacity:0.9;
+        background-repeat: no-repeat;
+        position:absolute !important;
+        /*margin-top: -238px;*/
+        margin-top:-166px;
+        margin-left: -354px;
+        top: 50%;
+        left: 50%;
+        /*padding:185px 40px 20px 40px;*/
+        padding:85px 40px 20px 40px;
+}
+/*#wrapper p{*/
+.wrapper p{
+  color:#6f7779;
+  font-size:13px;
+
+}
+#Card {
+    perspective:initial !important;
+    position:initial !important;
+    transform-style:initial !important;
+
+}
+a.login{
+  margin-top:20px;
+  margin-right:18px;
+  display:block;
+  float:left;
+}
+a.get-started{
+  margin-top:20px;
+  display:block;
+  float:right;
+}
+a.feedback{
+  position:fixed;
+  right:0px;
+  top:50%;
+  margin-top:-137px;
+}
+a:hover{
+  opacity:0.9;
+}
+ul.menu{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 85px;
+  padding: 0;
+  width: 218px;
+}
+ul.menu li{
+  list-style-type: none;
+  float:left;
+  color:#212121;
+  font-size: 15px;
+  margin:0px 15px;
+  
+}
+.clear{
+  clear:both;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family:'Helvetica-Light', sans-serif;
+	font-size:12px;
+}
+   .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+   .button {
+       background-color: #393939;
+    color: #FFF;
+    text-align: center;
+    font-family: "Lato-Bold";
+    font-size: 13px;
+    border-radius: 10px;
+    line-height: 25px;
+    width: 84px;
+    margin-top: 14px;
+    cursor:pointer;
+}
+
+   .button:hover {
+    background-color: #808080;
+    color: #FFF;
+}
+.pull-right {
+    float:right;
+}
+
+.anchors {
+        color: blue;
+    text-decoration: underline;
+    font-family:'Helvetica-Light', sans-serif;
+	font-size:12px;
+
+}
+
+.float-left {
+    float:left;
+    width:80%;
+}
+.float-right {
+    float:right;
+   width: 20%;
+}
+
+.site-title a {
+    font-weight: bolder;
+    font-size: 34px;
+    color: white;
+}
+
+#body {
+    width:100%;
+    float:left;
+}
+
+.otherwrapper {
+    width:628px;
+        min-height:300px;
+         margin-top: 0px;
+        margin-left: -354px;
+        top: 22%;
+        left: 50%;
+        background:white;
+        padding:45px 40px 45px 40px;
+        position:relative;
+        border-radius: 10px;
+        opacity:0.9;
+}

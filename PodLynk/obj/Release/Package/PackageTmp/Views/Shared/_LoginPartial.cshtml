@@ -1,0 +1,42 @@
+﻿@*@if (Request.IsAuthenticated) {
+    <text>
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </text>
+} else {
+    <ul>
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}*@
+   
+@if(!Request.IsAuthenticated){
+     <a class="col-lg-5 col-md-5 col-sm-1 col-xs-7 pull-right" style="text-decoration:none" @*href="/Trademan/Register"*@  href="@Url.Action("Register", "Account")">
+      <div class="button">Sign Up</div>
+      </a>
+}
+else
+{
+    <a class="col-lg-5 col-md-5 col-sm-1 col-xs-7 pull-right" style="text-decoration:none" href="@Url.Action("Manage", "Account", new { UserID = HttpContext.Current.User.Identity.Name })" @*href="/Trademan/MyAccount?UserID=@HttpContext.Current.User.Identity.Name"*@>
+      <div class="button">My Account</div>
+      </a> 
+}
+ <div class="button" style="float:right;">
+      
+@if(!Request.IsAuthenticated){
+    @Html.ActionLink("Log In", "login", new { controller = "Account" }, new { hidefocus = "hidefocus", @style="color:White;" })
+}
+else{
+                    @*<li><a href="@Url.Action("Logoff","Trademan")">Sign Out</a></li>*@
+   @* @Html.ActionLink("Log Off", "Logoff", new { controller = "Account" }, new { hidefocus = "hidefocus", @style="color:White;" })*@
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()" style="color:White;">Log off</a>
+        }
+             }
+
+
+    </div>

@@ -1,0 +1,44 @@
+﻿@model PodLynk.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="otherwrapper">
+<section id="loginForm">
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+   <div>
+                    @Html.LabelFor(m => m.UserName, new { @class = "loginLabel" }) 
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "required1" })          
+                    @Html.TextBoxFor(m => m.UserName, new { @autofocus = "autofocus", @class = "form-control", @placeholder = "E-mail Address" })
+                              
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.Password, new { @class = "loginLabel" }) 
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "required1" })       
+                    @Html.PasswordFor(m => m.Password, new { @placeholder = "Password", @class = "form-control" })  
+                               
+                </div>
+                <div class="loginLabel">
+                    <input id="RememberMe" name="RememberMe" type="checkbox"><label for="RememberMe">Save e-mail address on this computer</label>
+                </div>
+             
+                        <input type="submit" class="button pull-right" value="Login" >
+                   
+                   
+                
+   
+    <p>
+        @Html.ActionLink("Register", "Register","Account", null, new { @class="anchors"}) if you don't have an account.
+    </p>
+}
+</section>
+
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

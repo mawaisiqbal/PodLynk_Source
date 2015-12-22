@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PodLynk.Models.Projects> 
+@{
+    ViewBag.Title = "Index";
+    //Layout = null;
+}
+ 
+@using GridMvc.Html 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   <script src="http://trademen.iadvancetech.com/Scripts/bootstrap.min.js"></script>
+        <link href="http://trademen.iadvancetech.com/Content/bootstrap.min.css" rel="stylesheet">
+<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+
+<div class="container">
+<div style="clear:both;float:left;  margin-top: 18px;">
+
+@Html.ActionLink("Add New Project", "Create", "Project", new { ImageID = 0 }, new { @class="button",@style="padding:10px;"})</div>
+
+<div class="code-cut">  
+    @Html.Grid(Model).Columns(columns =>  
+                    {  
+                        //columns.Add(c => c.SchemeID).Titled("Scheme ID").Filterable(true);  
+                        columns.Add(c => c.ProjectTitle).Titled("Title").Filterable(true);
+                        columns.Add(c => c.CreatedAt).Format("{0:dd-MMM-yyyy}").Titled("Created At").Filterable(true);
+                        columns.Add(c => c.UpdatedAt).Format("{0:dd-MMM-yyyy}").Titled("Updated At").Filterable(true); 
+                        //columns.Add()  
+                        //.Encoded(false)  
+                        //.Sanitized(false)  
+                        //.SetWidth(30)  
+                        //.RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.Id }));  
+                          
+                    }).WithPaging(10).Sortable(true)  
+</div>  
+
+</div>
+<style>
+    .grid-mvc {
+    float: left;
+    width: 100%;
+}
+    body {
+        background:none;
+    }
+   
+   
+    @@media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+    }
+     @@media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+      @@media (min-width: 992px) {
+       .container {
+            width: 970px;
+        }
+    }
+</style>

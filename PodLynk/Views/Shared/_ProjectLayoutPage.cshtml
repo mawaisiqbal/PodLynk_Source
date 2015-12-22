@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - PodLynk</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        
+       
+        <link href=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+       
+    </head>
+    <body>
+      <div class="card_back">
+            <div class="content-wrapper container" >
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("PODLYNK", "Index", "Home")</p>
+                    <span class="WelComeText">Welcome to PodyLynk</span>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                 
+                </div>
+            </div>
+        </div>
+        <div id="body">
+           
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+                <a class="feedback" href="#"><img src="~/Content/images/feedback.png"/></a>
+            </section>
+        </div>
+       
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
